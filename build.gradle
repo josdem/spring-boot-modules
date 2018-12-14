@@ -11,8 +11,12 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+
+jar {
+  baseName = 'spring-boot-library'
+  version = '0.0.1-SNAPSHOT'
+}
 
 group = 'com.jos.dem.springboot.module'
 version = '0.0.1-SNAPSHOT'
@@ -28,3 +32,8 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 	testImplementation('io.projectreactor:reactor-test')
 }
+
+dependencyManagement {
+  imports { mavenBom("org.springframework.boot:spring-boot-dependencies:${springBootVersion}") }
+}
+
