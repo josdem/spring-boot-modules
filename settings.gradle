@@ -1,1 +1,3 @@
 rootProject.name = 'spring-boot-module'
+
+include 'library'

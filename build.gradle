@@ -25,6 +25,7 @@ repositories {
 
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-webflux')
+  compile project(':library')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 	testImplementation('io.projectreactor:reactor-test')
 }
