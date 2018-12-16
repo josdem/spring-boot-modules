@@ -1,4 +1,4 @@
-Spring Boot Module
+Spring Boot Modules
 ----------------------------------------------
 
 This project shows how to create a multi module project in Spring Boot
