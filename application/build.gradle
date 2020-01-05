@@ -1,5 +1,5 @@
 plugins {
-  id 'org.springframework.boot' version '2.1.6.RELEASE'
+  id 'org.springframework.boot' version '2.2.2.RELEASE'
   id 'java'
 }
 
@@ -7,7 +7,7 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'com.jos.dem.springboot.module'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.11
+sourceCompatibility = 12
 
 repositories {
   mavenCentral()
@@ -16,6 +16,12 @@ repositories {
 dependencies {
   implementation('org.springframework.boot:spring-boot-starter-webflux')
   implementation project(':library')
-  testImplementation('org.springframework.boot:spring-boot-starter-test')
+  testImplementation('org.springframework.boot:spring-boot-starter-test') {
+    exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+  }
   testImplementation('io.projectreactor:reactor-test')
+}
+
+test {
+  useJUnitPlatform()
 }
