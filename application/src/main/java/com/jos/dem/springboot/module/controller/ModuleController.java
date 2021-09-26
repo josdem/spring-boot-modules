@@ -1,18 +1,18 @@
 package com.jos.dem.springboot.module.controller;
 
+import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.jos.dem.springboot.module.library.service.MessageService;
 
 @RestController
+@RequiredArgsConstructor
 public class ModuleController {
 
-  @Autowired
-  private MessageService messageService;
+  private final MessageService messageService;
 
   @GetMapping("/")
   public Mono<String> index(){
