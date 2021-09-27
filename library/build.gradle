@@ -4,11 +4,6 @@ plugins {
   id 'java'
 }
 
-jar {
-  baseName = 'spring-boot-module-library'
-  version = '1.0.0-SNAPSHOT'
-}
-
 group = 'com.jos.dem.springboot.module.library'
 sourceCompatibility = 16
 
